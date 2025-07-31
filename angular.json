@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-testing-demo": {
+    "angular-behavior-vs-implementation-testing": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-testing-demo",
+            "outputPath": "dist/angular-behavior-vs-implementation-testing",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-testing-demo:build:production"
+              "buildTarget": "angular-behavior-vs-implementation-testing:build:production"
             },
             "development": {
-              "buildTarget": "angular-testing-demo:build:development"
+              "buildTarget": "angular-behavior-vs-implementation-testing:build:development"
             }
           },
           "defaultConfiguration": "development"

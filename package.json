@@ -1,5 +1,5 @@
 {
-  "name": "angular-testing-demo",
+  "name": "angular-behavior-vs-implementation-testing",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

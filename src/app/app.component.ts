@@ -11,5 +11,5 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-testing-demo';
+  title = 'angular-behavior-vs-implementation-testing';
 }
