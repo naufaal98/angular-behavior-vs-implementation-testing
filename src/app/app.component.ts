@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CounterComponent } from './counter/counter.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+
+import { NotificationListComponent } from './notification-list/notification-list.component';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CounterComponent, LoginFormComponent, UserProfileComponent],
+  imports: [RouterOutlet, NotificationListComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
