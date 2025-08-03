@@ -36,9 +36,9 @@ describe('UserListComponent', () => {
     
         fixture.detectChanges(); // triggers ngOnInit
     
-        expect(component.state.isLoading).toBe(false);
-        expect(component.state.error).toBeNull();
-        expect(component.state.users).toEqual(mockUsers);
+        expect(component.isLoading).toBe(false);
+        expect(component.error).toBeNull();
+        expect(component.users).toEqual(mockUsers);
         expect(userService.getUsers).toHaveBeenCalledTimes(1);
       });
     
@@ -49,9 +49,9 @@ describe('UserListComponent', () => {
     
         fixture.detectChanges(); // triggers ngOnInit
     
-        expect(component.state.isLoading).toBe(false);
-        expect(component.state.error).toBe(errorResponse.message);
-        expect(component.state.users).toEqual([]);
+        expect(component.isLoading).toBe(false);
+        expect(component.error).toBe(errorResponse.message);
+        expect(component.users).toEqual([]);
         expect(userService.getUsers).toHaveBeenCalledTimes(1);
       });
     });

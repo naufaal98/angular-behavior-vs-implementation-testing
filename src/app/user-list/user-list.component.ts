@@ -13,17 +13,17 @@ import { UserService } from './user.service';
     <div class="container">
       <h2>User Directory</h2>
 
-      @if (state.isLoading) {
+      @if (isLoading) {
         <p class="loading">Loading users...</p>
       }
 
-      @if (state.error) {
+      @if (error) {
         <p class="error">Failed to load users. Please try again later.</p>
       }
 
-      @if (!state.isLoading && !state.error && state.users.length > 0) {
+      @if (!isLoading && !error && users.length > 0) {
         <ul class="user-list">
-          @for (user of state.users; track user.id) {
+          @for (user of users; track user.id) {
             <li>
               <img [src]="'https://i.pravatar.cc/70?u=' + user.id" [alt]="user.name">
               <div>
@@ -95,23 +95,21 @@ import { UserService } from './user.service';
 export class UserListComponent implements OnInit {
   private userService = inject(UserService);
 
-  state = {
-    users: [] as User[],
-    isLoading: true,
-    error: null as string | null,
-  };
+  users: User[] = [];
+  isLoading: boolean = true;
+  error: string | null = null;
 
   ngOnInit(): void {
     this.userService.getUsers()
       .pipe(
-        finalize(() => this.state.isLoading = false)
+        finalize(() => this.isLoading = false)
       )
       .subscribe({
-        next: (users) => {
-          this.state.users = users;
+        next: (users: User[]) => {
+          this.users = users;
         },
         error: (err: HttpErrorResponse) => {
-          this.state.error = err.message;
+          this.error = err.message;
           console.error('Failed to load users:', err);
         }
       });
