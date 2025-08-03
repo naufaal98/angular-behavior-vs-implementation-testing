@@ -22,12 +22,12 @@ describe('Testing Demo', () => {
         
         it('should increment the count', () => {
             component.increment();
-            expect(component.count()).toBe(1);
+            expect(component.count).toBe(1);
         });
         
         it('should decrement the count', () => {
             component.decrement();
-            expect(component.count()).toBe(-1);
+            expect(component.count).toBe(-1);
         });
     });
 
