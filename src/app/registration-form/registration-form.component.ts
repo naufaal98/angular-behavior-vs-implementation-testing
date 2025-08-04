@@ -34,7 +34,7 @@ import { FormsModule, NgForm } from '@angular/forms';
           </form>
         </div>
       } @else {
-        <div class="success-message">
+        <div class="success-message" role="alert">
           <h2>Registration Successful!</h2>
           <p>Thank you for registering.</p>
           <button (click)="resetForm()">Register Another Account</button>
